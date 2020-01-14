@@ -1,6 +1,7 @@
 #### 1. Appium安装包下载地址
 
 ```
+# 使用appium需要安装环境node.js、java环境、安装android环境
 https://github.com/appium/appium-desktop/releases
 ```
 
