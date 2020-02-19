@@ -1,0 +1,43 @@
+# github项目地址：https://github.com/wulabing/V2Ray_ws-tls_bash_onekey
+# 视频安装地址：https://www.youtube.com/watch?v=5s9QskOnuJ4
+wget --no-check-certificate https://cloud.golby.cc/Shell/InstallNET.sh && chmod a+x InstallNET.sh
+bash InstallNET.sh -u 18.04 -v 64 -a
+
+# 默认密码
+MoeClub.org
+
+# 修改密码
+passwd
+
+
+# 下载bbr
+wget "http://github.com/chiakge/Linux-NetSpeed/raw/master/tcp.sh" && chmod +x tcp.sh && ./tcp.sh
+
+# 安装BBR
+2
+
+# 选择y or N
+NO
+
+NO
+
+# 选择重启服务器
+Y
+
+
+./tcp.sh
+7
+./tcp.sh
+10
+Y
+
+
+# github上下载
+wget -N --no-check-certificate -q -O install.sh "https://raw.githubusercontent.com/wulabing/V2Ray_ws-tls_bash_onekey/master/install.sh" && chmod +x install.sh && bash install.sh
+
+1
+
+4
+
+# 最后一步
+2
