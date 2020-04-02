@@ -41,7 +41,15 @@ appPackage，APP 程序包名。
 appActivity，入口 Activity 名，这里通常需要以.开头。
 ```
 
-#### 5.如何获取appActivity值
+#### 5.查看包名
+
+```
+adb shell pm list package -3   # 查看第三方软件包名
+```
+
+
+
+#### 6.如何获取appActivity值
 
 ```
 # 1.cmd中输入：
