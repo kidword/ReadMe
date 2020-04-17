@@ -49,18 +49,3 @@ adb shell pm list package -3   # 查看第三方软件包名
 
 
 
-#### 6.如何获取appActivity值
-
-```
-# 1.cmd中输入：
- 	adb shell
-# 2.继续输入：monkey -p uni.UNI2717CC7 -v -v -v 1
-	PD1616:/ $ monkey -p uni.UNI2717CC7 -v -v -v 1
-
- // Allowing start of Intent { act=android.intent.action.MAIN cat=[android.intent.category.LAUNCHER] cmp=com.taobao.taobao/com.taobao.tao.welcome.Welcome } in package com.taobao.taobao
- 
- cmp 后面就是appActivity的值。
- 
-可参考appium参数配置链接：https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/caps.md
-```
-
