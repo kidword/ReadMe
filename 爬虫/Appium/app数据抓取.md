@@ -1,3 +1,7 @@
+```python
+app数据抓取学习参考视频：https://www.youtube.com/watch?v=nXYuxjG_dP8&list=PL9iwkwxD1xhz-U6B5blYVjNoOa3WWVYQN&index=47
+```
+
 #### 1.简单
 
 ​		app里的数据比web端更容易抓取，反爬也没有那么强，大部分也都是http/https协议，返回的数据类型大多数为json。
