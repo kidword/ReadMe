@@ -4,7 +4,7 @@ import requests
 from loguru import logger
 
 
-class SuperUserProxy(object):
+class SuperUseProxy(object):
     def __init__(self):
         # 获取代理精灵api，一次提取一个
         self.dljl_proxy_api = 'http://ip.11jsq.com/api/entry?method=proxyServer.ipinfolist&packid=7&fa=5&fetch_key=&time=1&quantity=1&province=&city=&anonymous=1&ms=1&service=0&protocol=1&format=json&separator=1&separator_txt='
