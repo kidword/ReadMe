@@ -1,8 +1,8 @@
 [web]
 
 boss直聘
-拉钩
-智联
+拉钩 (selenium方式)
+智联 (selenium方式)
 
 # 商品
 淘宝
