@@ -39,7 +39,7 @@ frame.save(code_img_name)
 
 
 # 使用超级鹰识别验证码
-chaojiying = Chaojiying_Client('kidword', '123456', '899370')
+chaojiying = Chaojiying_Client('***', '***', '899370')
 im = open('code.png', 'rb').read()
 result = chaojiying.PostPic(im, 9004)['pic_str']
 print()
