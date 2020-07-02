@@ -8,10 +8,11 @@ import time
 from PIL import Image
 from login_12306.chaojiying import Chaojiying_Client
 
-
 bro = webdriver.Chrome()
 
-bro.set_window_size(1680, 900)   # 设置浏览器大小
+username = ''
+pwd = ''
+bro.set_window_size(1680, 900)  # 设置浏览器大小
 
 bro.get("https://kyfw.12306.cn/otn/resources/login.html")
 time.sleep(1)
@@ -37,13 +38,11 @@ code_img_name = 'code.png'
 frame = i.crop(rangle)
 frame.save(code_img_name)
 
-
 # 使用超级鹰识别验证码
-chaojiying = Chaojiying_Client('***', '***', '899370')
+chaojiying = Chaojiying_Client('', '', '899370')
 im = open('code.png', 'rb').read()
 result = chaojiying.PostPic(im, 9004)['pic_str']
-print()
-
+print(result)
 
 # 根据识别结果，使用selenium点击对应图片
 all_list = []
@@ -65,11 +64,18 @@ else:
     xy_list.append(y)
     all_list.append(xy_list)
 
-
 for l in all_list:
     x = l[0]
     y = l[1]
     ActionChains(bro).move_to_element_with_offset(code_img_ele, x, y).click().perform()
     time.sleep(0.5)
 
+
+bro.find_element_by_id("J-userName").send_keys(username)
+bro.find_element_by_id("J-password").send_keys(pwd)
+# 点击登录按钮
+bro.find_element_by_id('J-login').click()
+
+
+time.sleep(60)
 bro.quit()
