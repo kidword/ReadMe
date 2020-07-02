@@ -55,3 +55,6 @@ boss直聘
 https://dynamic6.scrape.cuiqingcai.com/
 2. 今日头条
 3. 自定义油候脚本
+4. AST DES RsA base64自定义加密（韦世东）
+5. 验证码（极验）、模型训练
+6. 安卓逆向
