@@ -21,3 +21,6 @@ driver.find_element_by_xpath('//input[@value="PRS_Max"]').click()
 
 time.sleep(35)
 driver.quit()
+
+# 惠农网cookie
+"cookie": 'hnUserTicket=c2be718d-ef4f-43fd-b8d0-d53bc44029bb;'
