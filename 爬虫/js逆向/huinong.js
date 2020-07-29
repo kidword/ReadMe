@@ -201,8 +201,16 @@ function bytesToHex(e) {
     return t.join("")
 }
 
+// deviceId加密
+function deviceId(){
+  var e = (new Date).getTime();
+    return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (function(t) {
+        var o = (e + 16 * Math.random()) % 16 | 0;
+        return e = Math.floor(e / 16), ("x" == t ? o : 3 & o | 8).toString(16)
+    }))
+}
 
-
+// password加密
 function getpwd(pwd){
   res = a(pwd)
   var s = wordsToBytes(res);

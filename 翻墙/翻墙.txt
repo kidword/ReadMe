@@ -1,5 +1,6 @@
 # github项目地址：https://github.com/wulabing/V2Ray_ws-tls_bash_onekey
-# 视频安装地址：https://www.youtube.com/watch?v=5s9QskOnuJ4
+# 视频安装地址：https://www.youtube.com/watch?v=5s9QskOnuJ4（失效）
+# 最新参考博客 https://iyideng.com/truth/cgfw/self-built-v2ray-server-tutorial-vultr.html
 wget --no-check-certificate https://cloud.golby.cc/Shell/InstallNET.sh && chmod a+x InstallNET.sh
 bash InstallNET.sh -u 18.04 -v 64 -a
 
