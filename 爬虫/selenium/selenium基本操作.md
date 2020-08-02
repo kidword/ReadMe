@@ -71,3 +71,23 @@ browser.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument",
 browser.get('http://ah.gsxt.gov.cn/index.html')
 ```
 
+### selenium 添加代理请求
+```
+from selenium import webdriver
+import time
+
+from file_action.mogu_ip import MoGu
+
+mogu = MoGu()
+ip = mogu.get_ip
+print('ip:', ip)
+options = webdriver.ChromeOptions()
+options.add_argument('--proxy-server=http://' + ip)
+browser = webdriver.Chrome(options=options)
+browser.get('https://httpbin.org/get')
+print(browser.page_source)
+
+time.sleep(20)
+browser.quit()
+
+```
