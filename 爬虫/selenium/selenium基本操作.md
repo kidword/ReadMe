@@ -91,3 +91,48 @@ time.sleep(20)
 browser.quit()
 
 ```
+
+### selenium 携带cookie请求登录后的页面
+```
+# !/bin/bash
+# -*- coding: utf-8 -*-
+"""
+@author kidword
+@desc 先模拟登陆以后，使用selenium的get_cookies方法将网站的cookies保存到本地文件，
+      本模块使用selenium读取本地cookies以后，访问登录之后的界面
+@date 2020/08/04
+"""
+
+
+import json
+from selenium import webdriver
+
+
+class SeleniumCookie:
+    def __init__(self):
+        self.driver = webdriver.Chrome()
+        # 目标url
+        self.targer_url = "http://data.cma.cn/order/list/show_value/normal.html"
+
+    def close(self):
+        self.driver.quit()
+
+    def req(self):
+        # 初次建立连接，随后方可修改cookie
+        self.driver.get(self.targer_url)
+        # 删除第一次建立连接时的cookie
+        self.driver.delete_all_cookies()
+        # 读取登录时存储到本地的cookie
+        with open('cookies.json', 'r', encoding='utf-8') as f:
+            listCookies = json.loads(f.read())
+
+        try:
+            for cookie in listCookies:
+                self.driver.add_cookie(cookie)
+            # 再次访问页面，便可实现免登陆访问
+            print('再次请求')
+            self.driver.get(self.targer_url)
+        except Exception as e:
+            print(e)
+
+```
