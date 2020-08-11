@@ -74,16 +74,17 @@ browser.get('http://ah.gsxt.gov.cn/index.html')
 ### selenium 添加代理请求
 ```
 from selenium import webdriver
+from selenium.webdriver import ChromeOptions
 import time
 
 from file_action.mogu_ip import MoGu
 
+option = ChromeOptions()
 mogu = MoGu()
 ip = mogu.get_ip
 print('ip:', ip)
-options = webdriver.ChromeOptions()
-options.add_argument('--proxy-server=http://' + ip)
-browser = webdriver.Chrome(options=options)
+option.add_argument(('--proxy-server=' + ip))#有的博客写的是'--proxy-server=http://'，就目前我的电脑来看的话需要把http://去掉就可以用，他会自己加的
+browser = webdriver.Chrome(options=option)
 browser.get('https://httpbin.org/get')
 print(browser.page_source)
 
