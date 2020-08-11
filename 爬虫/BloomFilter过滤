@@ -1,0 +1,7 @@
+from bloom_filter import BloomFilter
+
+bloombloom = BloomFilter(max_elements=100000000, error_rate=0.1)
+
+bloombloom.add('https://www.tianyancha.com/company/23402373')
+
+print('https://www.tianyancha.com/company/23402373' in bloombloom)
