@@ -1,0 +1,92 @@
+<template>
+	<div>
+		<!--
+    
+    <span :class="[isActive==1  ? 'active': 'unctive']">首页</span>
+		<button @click="isActiveFun()">sadasd</button> -->
+		<Calendar
+		v-on:choseDay="clickDay"
+		v-on:changeMonth="changeDate"
+		:markDateMore=arr
+		></Calendar>
+	</div>
+</template>
+
+<script>
+	import { getApi } from "@/api/common.js"
+	import Calendar from 'vue-calendar-component';
+	// components: {
+	// 	Calendar
+	// }
+	export default {
+		name: '',
+		data() {
+			return{
+				isActive: 2,
+				arr:[
+					{date:'2020/9/1',className:"mark1"},
+				 	{date:'2020/9/13',className:"mark2"}
+				],
+			}
+		},
+		components: {
+			Calendar
+		},
+		methods: {
+			isActiveFun() {
+				if (this.isActive == 1){
+					this.isActive = 2
+					console.log("yes")
+				} else {
+					this.isActive = 1
+					console.log("no")
+				}
+			},
+			clickDay(data) {
+				console.log(data); //选中某天
+			},
+			changeDate(data) {
+				console.log(data); //左右点击切换月份
+			},
+			clickToday(data) {
+				console.log(data); // 跳到了本月
+			}
+		},
+		created() {
+			
+		},
+		mounted() {
+		  
+		}
+	}
+</script>
+<style lang="scss" scoped>
+// /deep/ .wh_content_item>.wh_isMark{
+// 	background:#8383e3 !important;
+// }
+/deep/ .mark1{
+	color: #fff;
+	width: 40px;
+	height: 40px;
+	border-radius: 40px;
+	display: block;
+	background: #c7c78f;
+}
+/deep/ .wh_chose_day{
+	background: #ff0 !important;
+}
+/deep/ .wh_isToday{
+	background: none !important;
+}
+	span{
+		color: $green;
+		padding: 10px;
+	}
+	.active{
+		color: red;
+	}
+</style>
+
+
+// 安装
+cnpm i vue-calendar-component --save
