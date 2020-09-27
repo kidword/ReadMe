@@ -1,0 +1,149 @@
+<template>
+    <Table border :columns="columns2" :data="data3"></Table>
+</template>
+<script>
+    export default {
+        data () {
+            return {
+                columns2: [
+                    {
+                        title: 'Name',
+                        key: 'name',
+                        width: 150,
+                        fixed: 'left',
+                        render: (h, params) => {
+                            return h('div', [
+                                h("div", {
+                                    props: {
+                                        type: "text",
+                                        size: 'small'
+                                    },
+                                    style: {
+                                        color:"red"
+                                    },
+                                    on: {
+                                        click: () => {
+                                            this.$router.push({path:"baidu.com"})
+                                            // windows.location.href = "http://www.baidu.com"
+                                            console.log("click1")
+                                        }
+                                    }
+                                }, params.row.name),
+                                h('div', {
+                                    props: {
+                                        type: 'text',
+                                        size: 'small'
+                                    },
+                                    style: {
+                                        color:"red"
+                                    },
+                                    on: {
+                                        click: () => {
+                                            this.$router.push = "http://www.baidu.com"
+                                            console.log("click2")
+                                        }
+                                    }
+                                }, params.row.stock_id)
+                            ])
+                        }
+                    },
+                    {
+                        title: 'Age',
+                        key: 'sectionstart',
+                        width: 100
+                    },
+                    {
+                        title: 'Province',
+                        key: 'sectionend',
+                        width: 100
+                    },
+                    {
+                        title: 'City',
+                        key: 'takeprofit',
+                        width: 100
+                    },
+                    {
+                        title: 'Address',
+                        key: 'stoploss',
+                        width: 200
+                    },
+                    {
+                        title: 'Postcode',
+                        key: 'stock_id',
+                        width: 100
+                    },
+                    {
+                        title: '理由',
+                        key: 'action',
+                        fixed: 'right',
+                        width: 100,
+                        render: (h, params) => {
+                            return h('div', [
+                                h('Button', {
+                                    props: {
+                                        type: 'text',
+                                        size: 'small'
+                                    },
+                                    on: {
+                                        click: () => {
+                                            this.navigateTo(params.row.stock_id)
+                                        }
+                                    },
+                                }, '查看'),
+                            ]);
+                        }
+                    }
+                ],
+                data3: []
+            }
+        },
+        methods: {
+            navigateTo(value){
+                alert(value)
+            },
+            get_data(){
+                let data1 = [
+                    {
+                        name: 'John Brown',
+                        sectionstart: '1',
+                        sectionend: '1',
+                        takeprofit: '1',
+                        stoploss: '1',
+                        stock_id: 100000
+                    },
+                    {
+                        name: 'John Brown',
+                        sectionstart: 1,
+                        sectionend: '1',
+                        takeprofit: '1',
+                        stoploss: '1',
+                        stock_id: 100000
+                    },
+                    {
+                        name: 'John Brown',
+                        sectionstart: "1",
+                        sectionend: '1',
+                        takeprofit: '1',
+                        stoploss: '1',
+                        stock_id: 100000
+                    },
+                ]
+                let data_list = []
+                for(var i=0; i<data1.length; i++){
+                    let data_obj = {}
+                    data_obj.name = data1[i].name
+                    data_obj.sectionstart = data1[i].sectionstart + '-' + data1[i].sectionend
+                    data_obj.takeprofit = data1[i].takeprofit
+                    data_obj.stoploss = data1[i].stoploss
+                    data_obj.stock_id = data1[i].stock_id
+                    data_list.push(data_obj)
+                }
+                this.data3 = data_list
+                
+            },
+        },
+        mounted(){
+            this.get_data()
+        }
+    }
+</script>
